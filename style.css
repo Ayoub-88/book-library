@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;  
+}
+
+body{
+    background: #4568DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+ /* header */
+header{
+    width: 600px;
+    height: 70px;
+    padding: 10px;
+    background-color: white;
+    margin: 0 auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;   
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+    box-shadow:0;
+    transition: all 0.3s;
+    /* position: sticky; 
+    top: 0px;                  ***if you want the header to be sticky 
+    z-index: 99; */
+}
+
+header:hover{
+    box-shadow: 0px 0px 20px 0px white;
+    transform: scale(1.03);
+}
+
+
+header .button{
+    padding: 10px;
+    background-color: #2ecc71;
+    border: 0px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .4s;
+    color: black;
+}
+header .button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px #2ecc71;
+}
+
+
+  /* main  */ 
+main{
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(0, 0,0, 0.6);
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+main #main-title {
+    text-align: center;
+    color: #fff;
+    text-decoration: underline ;
+}
+#library{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+#library .book{
+    width: 250px;
+    height: 280px ;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-self: normal;
+    box-shadow: 0;
+    transition: all 0.3s;
+}
+
+#library .book:hover{
+    box-shadow: 0px 0px 15px 0px white;
+    transform: scale(1.03);
+}
+
+#library .book .book-title{
+    color: black;
+    text-decoration: underline;
+}
+
+
+#library .book .book-author{
+    color: black;
+}
+
+#library .book .book-pages{
+    color: black;
+}
+
+
+#library .book  button{
+    font-size: 18px;
+    width: 80px;
+    height: 40px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+.read-status{
+    background: #2ecc71;
+    color: black;
+}
+
+.read-status:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 7px 2px #2ecc71;
+}
+.delete{
+    background: firebrick;
+    color: black;
+}
+.delete:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px 2px firebrick;
+}
+
+
+ /* Modal   */  
+.modal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal .modal-content{
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* background-color: #4568DC; */
+    width: 250px;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.modal-content #modal-title{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-content form {
+    width: 100%;    
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.modal-content form .title-input label, .modal-content form .author-input label, .modal-content form .pages-input label{
+    display: block;
+    color: white;
+    font-size: 20px;
+}
+.modal-content form .title-input input, .modal-content form .author-input input, .modal-content form .pages-input input{
+    width: 100%;
+    height: 25px;
+    padding: 15px 10px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.right{
+    border: 1px solid red;
+}
+
+
+.read-input{
+    margin-top: 5px;
+}
+
+form .btn-grp{
+    display: flex;
+}
+
+form .btn-grp button{
+    font-size: 16px;
+    color: black;
+    width: 90px;
+    height: 40px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+}
+form .btn-grp #submit{
+    background-color: #2ecc71;
+}
+
+form .btn-grp #submit:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #2ecc71;
+}
+
+form .btn-grp #cancel{
+    background: firebrick;
+}
+
+form .btn-grp #cancel:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px firebrick;
+}
+
+
+
+
+
+form #res{
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 20px;
+    text-align: center;
+}
+
+
