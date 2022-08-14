@@ -8,28 +8,48 @@ const res = document.querySelector("#res")
 let myLibrary = []
 
 
-
-function Book(title, author, pages , read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-}
-
-Book.prototype.changeRead = function() {
-    if (this.read === "read") {
-        this.read = "not read"
-    }else {
-        this.read = "read"
+class Book {
+    constructor(title, author, pages , read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+    changeRead() {
+        if (this.read === "read") {
+            this.read = "not read"
+        }else {
+            this.read = "read"
+        }
+    }
+    removeBook(book) {
+        myLibrary.splice(book.dataset.index, 1)
+        library.removeChild(book)
     }
 }
 
 
+// function Book(title, author, pages , read) {    
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+// }
 
-Book.prototype.removeBook = function(book) {
-    myLibrary.splice(book.dataset.index, 1)
-    library.removeChild(book)
-}
+// Book.prototype.changeRead = function() {
+//     if (this.read === "read") {
+//         this.read = "not read"
+//     }else {
+//         this.read = "read"
+//     }
+// }
+
+
+
+// Book.prototype.removeBook = function(book) {
+//     myLibrary.splice(book.dataset.index, 1)
+//     library.removeChild(book)
+// }
 
 
 function showBooks() {
@@ -68,7 +88,7 @@ function showBooks() {
             ReadStatus.innerText = `${myLibrary[i].read}`
         } )
 
-        Delete.addEventListener("click", function(e) {
+        Delete.addEventListener("click", function() {
             myLibrary[i].removeBook(Book)
         })
     }
@@ -127,6 +147,7 @@ window.addEventListener("click", function(e) {
         modal.style.display = "none"
         form.reset()
     }
+
 })
 
 closeButton.addEventListener("click", function() {
